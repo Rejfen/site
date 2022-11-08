@@ -2,6 +2,16 @@ body {
     background-image:url("tlo.png")
 }
 
+.workspc {
+    position:fixed;
+    margin:auto;
+    right:10%;
+    left:10%;
+    top:0;
+    width:80%;
+    height:100%;
+}
+
 .left-sblock1 {
     background-color:#666666;
     position:absolute;
@@ -42,12 +52,7 @@ body {
     width:10%;
 }
 
-.workspc {
-    position:fixed;
-    margin:auto;
-    right:10%;
-    left:10%;
-    top:0;
-    width:80%;
-    height:100%;
+.textmod {
+    text-align:center;
+    font-family:'Comic Sans MS';
 }
