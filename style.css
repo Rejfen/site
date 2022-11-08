@@ -56,3 +56,12 @@ body {
     text-align:center;
     font-family:'Comic Sans MS';
 }
+
+.formmod {
+    background-color:white;
+    position:fixed;
+    right:35%;
+    left:35%;
+    width:400px;
+    height:500px;
+}
