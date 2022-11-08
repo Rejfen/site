@@ -65,3 +65,10 @@ body {
     width:400px;
     height:500px;
 }
+
+.list {
+    width:200px;
+    height:130px;
+    margin:auto;
+    overflow-y: auto;
+}
