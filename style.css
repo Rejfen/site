@@ -11,6 +11,7 @@ body {
     top:0;
     margin-left:auto;
 }
+
 .right-sblock1 {
     background-color:#666666;
     position:absolute;
@@ -39,4 +40,14 @@ body {
 .opacity3 {
     opacity:0.2;
     width:10%;
+}
+
+.workspc {
+    position:fixed;
+    margin:auto;
+    right:10%;
+    left:10%;
+    top:0;
+    width:80%;
+    height:100%;
 }
