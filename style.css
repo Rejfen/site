@@ -72,3 +72,7 @@ body {
     margin:auto;
     overflow-y: auto;
 }
+
+.list ul {
+    list-style:"*";
+}
