@@ -3,7 +3,7 @@ body {
 }
 
 .workspc {
-    position:fixed;
+    position:static;
     margin:auto;
     right:10%;
     left:10%;
@@ -58,11 +58,10 @@ body {
 }
 
 .formmod {
-    background-color:white;
+    background-color:red;
     position:fixed;
     right:35%;
     left:35%;
-    width:400px;
     height:500px;
 }
 
