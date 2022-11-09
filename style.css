@@ -58,10 +58,9 @@ body {
 }
 
 .formmod {
-    background-color:red;
-    position:fixed;
-    right:35%;
-    left:35%;
+    background-color:white;
+    margin-left:35%;
+    margin-right:35%;
     height:500px;
 }
 
