@@ -1,3 +1,23 @@
+<?php
+    function ifless($number)
+    {
+        if($number<1)
+        {
+            echo "Wprowadź inną liczbę";
+        }
+    }
+
+    if(!empty($_POST))
+    {       
+        
+            $number = $_POST["number"];
+            $return=false;
+            global $number, $return;
+            echo "$number";
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
     <head>
@@ -6,6 +26,9 @@
         <meta charset="UTF-8">
     </head>
     <body>
+        
+            
+        
         <div>
             <div class="left-sblock1"></div>
             <div class="opacity left-sblock1"></div>
@@ -18,30 +41,22 @@
                     <br /><hr /><br />
                     <div class="formmod">
                         <br />
-                        <form action="<?php echo htmlspecialchars($_SERVER[‘PHP_SELF’]); ?>" method="get" class="textmod">
+                        <form  method="POST" class="textmod">
                             <label for="number">Podaj liczbę</label>
                             <input type="number" name="number" id="number">
                             <br /><br />
                             <label for="leapyear">Czy Rok ma być przestępny?</label>
                             <input type="checkbox" name="leapyear" id="leapyear">
                             <br /><br />
-                            <input type="submit" value="Wyślij">
+                            <input type="submit" name="submit" value="Wyślij">
                         </form>
+                            
+                        </br>
+                        
                         <br />
                         <div class="list">
                             <ul class="textmod">
-                                <li>Lista</li>
-                                <li>Lista</li>
-                                <li>Lista</li>
-                                <li>Lista</li>
-                                <li>Lista</li>
-                                <li>Lista</li>
-                                <li>Lista</li>
-                                <li>Lista</li>
-                                <li>Lista</li>
-                                <li>Lista</li>
-                                <li>Lista</li>
-                                <li>Lista</li>
+                                
                             </ul>
                         </div>
                     </div>
