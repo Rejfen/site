@@ -1,31 +1,27 @@
-<?php
-    if (!empty($_POST)) {       
-        $number = $_POST["number"];
-
-        function listing()
-        {
-            if ($number<=0) {
-                $error = 'Zła liczba';
-                echo $error;              
-            }
-            else {
-                $array = array();
-                echo "<ul>";
-                for($i=0;$i<$number;$i++) {
-                    $timestamp = mt_rand(1, time());
-                    $array[$i]= date("d.m", $timestamp);
-                    if(isset($_POST["leapyear"])==true)
-                        echo "<li>$i / ".$array[$i]."</li><br />";
-                    else {
-                        while($array[$i]==29.02) {
-                            $timestamp = mt_rand(1, time());
-                            $array[$i]= date("d.m", $timestamp);
-                        }
+<?php     
+    function listing($number)
+    {
+        if ($number<=0) {
+            $error = 'Zła liczba';
+            echo $error;              
+        }
+        else {
+            $array = array();
+            echo "<ul class=textmod>";
+            for($i=0;$i<$number;$i++) {
+                $timestamp = mt_rand(1, time());
+                $array[$i]= date("d.m", $timestamp);
+                if(isset($_POST["leapyear"])==true)
                     echo "<li>$i / ".$array[$i]."</li><br />";
-                    }      
-                }
-                echo "</ul>";
+                else {
+                    while($array[$i]==29.02) {
+                        $timestamp = mt_rand(1, time());
+                        $array[$i]= date("d.m", $timestamp);
+                    }
+                echo "<li>$i / ".$array[$i]."</li><br />";
+                }      
             }
+            echo "</ul>";
         }
     }
 ?>
@@ -62,14 +58,14 @@
                             <br /><br />
                             <input type="submit" name="submit" value="Wyślij">
                         </form>
-                            
                         </br>
-                        
                         <br />
                         <div class="list">
-                            <ul class="textmod">
-                                
-                            </ul>
+                            <?php
+                                if (!empty($_POST)) {  
+                                    listing($_POST["number"]);
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>
