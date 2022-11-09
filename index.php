@@ -18,7 +18,7 @@
                     <br /><hr /><br />
                     <div class="formmod">
                         <br />
-                        <form action="form_date.php" method="get" class="textmod">
+                        <form action="<?php echo htmlspecialchars($_SERVER[‘PHP_SELF’]); ?>" method="get" class="textmod">
                             <label for="number">Podaj liczbę</label>
                             <input type="number" name="number" id="number">
                             <br /><br />
