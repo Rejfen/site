@@ -1,21 +1,33 @@
 <?php
-    function ifless($number)
-    {
-        if($number<1)
+    if (!empty($_POST)) {       
+        $number = $_POST["number"];
+
+        function listing()
         {
-            echo "Wprowadź inną liczbę";
+            if ($number<=0) {
+                $error = 'Zła liczba';
+                echo $error;              
+            }
+            else {
+                $array = array();
+                echo "<ul>";
+                for($i=0;$i<$number;$i++) {
+                    $timestamp = mt_rand(1, time());
+                    $array[$i]= date("d.m", $timestamp);
+                    if(isset($_POST["leapyear"])==true)
+                        echo "<li>$i / ".$array[$i]."</li><br />";
+                    else {
+                        while($array[$i]==29.02) {
+                            $timestamp = mt_rand(1, time());
+                            $array[$i]= date("d.m", $timestamp);
+                        }
+                    echo "<li>$i / ".$array[$i]."</li><br />";
+                    }      
+                }
+                echo "</ul>";
+            }
         }
     }
-
-    if(!empty($_POST))
-    {       
-        
-            $number = $_POST["number"];
-            $return=false;
-            global $number, $return;
-            echo "$number";
-    }
-
 ?>
 
 <!DOCTYPE html>
