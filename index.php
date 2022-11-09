@@ -53,7 +53,7 @@
                             <label for="number">Podaj liczbę</label>
                             <input type="number" name="number" id="number">
                             <br /><br />
-                            <label for="leapyear">Czy Rok ma być przestępny?</label>
+                            <label for="leapyear">Uwzględnij dni przestępne</label>
                             <input type="checkbox" name="leapyear" id="leapyear">
                             <br /><br />
                             <input type="submit" name="submit" value="Wyślij">
