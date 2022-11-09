@@ -3,7 +3,7 @@
     {
         if ($number<=0) {
             $error = 'Zła liczba';
-            echo $error;              
+            echo "<div class=textmod>".$error."</div>";              
         }
         else {
             $array = array();
