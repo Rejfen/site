@@ -1,5 +1,5 @@
 <?php
-    require('App\Classes\DataGenerator.php');
+    include('App\Classes\DataGenerator.php');
     
     function validateData(int $number) {
         $error = ''; 
@@ -64,9 +64,14 @@
                         <br />
                         <div class="list">
                             <?php
+                                
+
                                 if (!empty($_POST) && array_key_exists('number', $_POST)) {
                                     $number = (int) $_POST["number"];
                                     $isLeapYear = (bool) (isset($_POST["leapyear"]) ? true : false);
+                                    
+                                    $list = new DataGenerator();
+                                    $list->test($number);
 
                                     $error = validateData($number);
 
