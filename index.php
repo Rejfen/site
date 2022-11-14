@@ -1,28 +1,31 @@
 <?php     
-    function listing($number)
-    {
+    function validateData(int $number) {
+        $error = ''; 
+
         if ($number<=0) {
-            $error = 'Zła liczba';
-            echo "<div class=textmod>".$error."</div>";              
+            $error = 'Zła liczba';             
         }
-        else {
-            $array = array();
-            echo "<ul class=textmod>";
-            for($i=0;$i<$number;$i++) {
-                $timestamp = mt_rand(1, time());
-                $array[$i]= date("d.m", $timestamp);
-                if(isset($_POST["leapyear"])==true)
-                    echo "<li>$i / ".$array[$i]."</li><br />";
-                else {
-                    while($array[$i]==29.02) {
-                        $timestamp = mt_rand(1, time());
-                        $array[$i]= date("d.m", $timestamp);
-                    }
-                echo "<li>$i / ".$array[$i]."</li><br />";
-                }      
+
+        return $error;
+    }
+
+    function checkLeapYearAndGetAllDates(int $number, bool $isLeapYear = true)
+    {
+        $array = array();
+        
+        for ($i=0; $i < $number; $i++) {
+            $timestamp = mt_rand(1, time());
+            $array[$i]= "<li>" . date("d.m", $timestamp) . "</li>";
+
+            if ($isLeapYear !== true) {
+                while( $array[$i] == '<li>29.02</li>' ) {
+                    $timestamp = mt_rand(1, time());
+                    $array[$i] = "<li>" . date("d.m", $timestamp) . "</li>";
+                }
             }
-            echo "</ul>";
         }
+
+        return $array;
     }
 ?>
 
@@ -62,8 +65,24 @@
                         <br />
                         <div class="list">
                             <?php
-                                if (!empty($_POST)) {  
-                                    listing($_POST["number"]);
+                                if (!empty($_POST) && array_key_exists('number', $_POST)) {
+                                    $number = (int) $_POST["number"];
+                                    $isLeapYear = (bool) (isset($_POST["leapyear"]) ? true : false);
+
+                                    $error = validateData($number);
+
+                                    if ($error !== '') {
+                                        echo "<div class=textmod>".$error."</div>"; 
+                                    } else {
+                                        echo "<ul class=textmod>";
+                                        $results = checkLeapYearAndGetAllDates($number, $isLeapYear);
+
+                                        foreach ($results as $result) {
+                                            echo $result;
+                                        }
+
+                                        echo "</ul>";
+                                    }
                                 }
                             ?>
                         </div>
