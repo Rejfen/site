@@ -1,4 +1,6 @@
-<?php     
+<?php
+    require('App\Classes\DataGenerator.php');
+    
     function validateData(int $number) {
         $error = ''; 
 
@@ -37,9 +39,6 @@
         <meta charset="UTF-8">
     </head>
     <body>
-        
-            
-        
         <div>
             <div class="left-sblock1"></div>
             <div class="opacity left-sblock1"></div>
@@ -73,7 +72,8 @@
 
                                     if ($error !== '') {
                                         echo "<div class=textmod>".$error."</div>"; 
-                                    } else {
+                                    } 
+                                    else {
                                         echo "<ul class=textmod>";
                                         $results = checkLeapYearAndGetAllDates($number, $isLeapYear);
 
