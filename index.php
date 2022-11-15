@@ -1,34 +1,18 @@
 <?php
     include('App\Classes\DataGenerator.php');
-    
-    function validateData(int $number) {
-        $error = ''; 
 
-        if ($number<=0) {
-            $error = 'Zła liczba';             
-        }
+    if (!empty($_POST) && array_key_exists('number', $_POST)) {
+        $number = (int) $_POST["number"];
+        $isLeapYear = (bool) (isset($_POST["leapyear"]) ? true : false);
 
-        return $error;
-    }
-
-    function checkLeapYearAndGetAllDates(int $number, bool $isLeapYear = true)
-    {
-        $array = array();
+        $list = new DataGenerator();
         
-        for ($i=0; $i < $number; $i++) {
-            $timestamp = mt_rand(1, time());
-            $array[$i]= "<li>" . date("d.m", $timestamp) . "</li>";
+        $error = $list->validateData($number);
+        
+        $results = $list->checkLeapYearAndGetAllDates($number, $isLeapYear);
 
-            if ($isLeapYear !== true) {
-                while( $array[$i] == '<li>29.02</li>' ) {
-                    $timestamp = mt_rand(1, time());
-                    $array[$i] = "<li>" . date("d.m", $timestamp) . "</li>";
-                }
-            }
-        }
-
-        return $array;
     }
+
 ?>
 
 <!DOCTYPE html>
@@ -67,26 +51,20 @@
                                 
 
                                 if (!empty($_POST) && array_key_exists('number', $_POST)) {
-                                    $number = (int) $_POST["number"];
-                                    $isLeapYear = (bool) (isset($_POST["leapyear"]) ? true : false);
-                                    
-                                    $list = new DataGenerator();
-                                    $list->test($number);
-
-                                    $error = validateData($number);
 
                                     if ($error !== '') {
                                         echo "<div class=textmod>".$error."</div>"; 
                                     } 
                                     else {
                                         echo "<ul class=textmod>";
-                                        $results = checkLeapYearAndGetAllDates($number, $isLeapYear);
 
                                         foreach ($results as $result) {
                                             echo $result;
                                         }
 
                                         echo "</ul>";
+                                        
+
                                     }
                                 }
                             ?>
