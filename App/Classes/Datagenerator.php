@@ -5,9 +5,9 @@
         public $number;
         public $isLeapYear;
 
-        public function __construct()
+        public function __construct(bool $isLeapYear)
         {
-
+            $this->isLeapYear = $isLeapYear;
         }
 
         public function validateData(int $number)
@@ -21,15 +21,15 @@
             return $error;
         }
 
-        public function checkLeapYearAndGetAllDates(int $number, bool $isLeapYear = true)
+        public function checkLeapYearAndGetAllDates(int $number)
         {
-            $array = array();
+            $array = [];
             
             for ($i=0; $i < $number; $i++) {
                 $timestamp = mt_rand(1, time());
                 $array[$i]= "<li>" . date("d.m", $timestamp) . "</li>";
 
-                if ($isLeapYear !== true) {
+                if (($this->isLeapYear) !== true) {
                     while( $array[$i] == '<li>29.02</li>' ) {
                         $timestamp = mt_rand(1, time());
                         $array[$i] = "<li>" . date("d.m", $timestamp) . "</li>";

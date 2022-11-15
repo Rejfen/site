@@ -5,14 +5,10 @@
         $number = (int) $_POST["number"];
         $isLeapYear = (bool) (isset($_POST["leapyear"]) ? true : false);
 
-        $list = new DataGenerator();
-        
+        $list = new DataGenerator($isLeapYear);
         $error = $list->validateData($number);
-        
-        $results = $list->checkLeapYearAndGetAllDates($number, $isLeapYear);
-
+        $results = $list->checkLeapYearAndGetAllDates($number);
     }
-
 ?>
 
 <!DOCTYPE html>
@@ -48,10 +44,7 @@
                         <br />
                         <div class="list">
                             <?php
-                                
-
-                                if (!empty($_POST) && array_key_exists('number', $_POST)) {
-
+                                if (isset($number) == true) {
                                     if ($error !== '') {
                                         echo "<div class=textmod>".$error."</div>"; 
                                     } 
@@ -63,8 +56,6 @@
                                         }
 
                                         echo "</ul>";
-                                        
-
                                     }
                                 }
                             ?>
