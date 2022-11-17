@@ -27,9 +27,7 @@
             <div class="opacity2 left-sblock1"></div>
             <div class="opacity3 left-sblock1"></div>
                 <div class="workspc">
-                    <br /><br />
-                    <h1 class="textmod">STRONA</h1>
-                    <br /><hr /><br />
+                    <br /><br /><br /><br /><br /><hr /><br />
                     <div class="formmod">
                         <br />
                         <form  method="POST" class="textmod">
@@ -62,6 +60,7 @@
                             ?>
                         </div>
                     </div>
+                    <br /><br /><hr />
                 </div>
             <div class="right-sblock1"></div>
             <div class="opacity right-sblock1"></div>
