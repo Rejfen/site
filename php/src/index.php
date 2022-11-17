@@ -19,6 +19,7 @@
         <meta charset="UTF-8">
     </head>
     <body>
+        <div class="menu"></div>
         <div>
             <div class="left-sblock1"></div>
             <div class="opacity left-sblock1"></div>
@@ -68,5 +69,6 @@
             <div class="opacity2 right-sblock1"></div>
             <div class="opacity3 right-sblock1"></div>
         </div>
+        
     </body>
 </html>
