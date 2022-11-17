@@ -19,9 +19,16 @@
         <meta charset="UTF-8">
     </head>
     <body>
-        <div class="menu ">
-            <h1 class="menuTextMod">Menu</h1>
+        <div class="menu">
+            <div class="menuTextMod">Menu</div>
             <div class="line"></div>
+            <div class="linkTextMod">
+                <ul>
+                    <li>test</li>
+                    <li>test</li>
+                </ul>
+            </div>
+            
         </div>
         <div>
             <div class="left-sblock1"></div>
