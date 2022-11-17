@@ -40,7 +40,7 @@
                             <br /><br />
                             <input type="submit" name="submit" value="Wyślij">
                         </form>
-                        </br>
+                        <br />
                         <br />
                         <div class="list">
                             <?php
