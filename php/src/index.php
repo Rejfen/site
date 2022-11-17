@@ -20,14 +20,12 @@
     </head>
     <body>
         <?php
-        include('menu.html');
+        include('visual/menu.html');
         ?>
         <div>
-            <div class="left-sblock1"></div>
-            <div class="opacity left-sblock1"></div>
-            <div class="opacity1 left-sblock1"></div>
-            <div class="opacity2 left-sblock1"></div>
-            <div class="opacity3 left-sblock1"></div>
+            <?php 
+            include('visual/sidebarleft.html');
+            ?>
                 <div class="workspc">
                     <br /><br /><br /><br /><br /><hr /><br />
                     <div class="formmod">
@@ -64,12 +62,9 @@
                     </div>
                     <br /><br /><hr />
                 </div>
-            <div class="right-sblock1"></div>
-            <div class="opacity right-sblock1"></div>
-            <div class="opacity1 right-sblock1"></div>
-            <div class="opacity2 right-sblock1"></div>
-            <div class="opacity3 right-sblock1"></div>
+            <?php 
+            include('visual/sidebarRight.html');
+            ?>
         </div>
-        
     </body>
 </html>
