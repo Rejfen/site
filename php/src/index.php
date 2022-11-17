@@ -19,17 +19,9 @@
         <meta charset="UTF-8">
     </head>
     <body>
-        <div class="menu">
-            <div class="menuTextMod">Menu</div>
-            <div class="line"></div>
-            <div class="linkTextMod">
-                <ul>
-                    <li>test</li>
-                    <li>test</li>
-                </ul>
-            </div>
-            
-        </div>
+        <?php
+        include('menu.html');
+        ?>
         <div>
             <div class="left-sblock1"></div>
             <div class="opacity left-sblock1"></div>
