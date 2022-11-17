@@ -52,9 +52,15 @@ body {
     width:10%;
 }
 
-.textmod {
-    text-align:center;
-    font-family:'Comic Sans MS';
+.menu {
+    position:absolute;
+    background-color:#292828;
+    width:100%;
+    height:90px;
+    top:0;
+    left:0;
+    right:0;
+    margin-top:auto;
 }
 
 .formmod {
@@ -71,17 +77,30 @@ body {
     overflow-y: auto;
 }
 
+.line {
+    position: absolute;
+    background-color:#999999;
+    width:1px;
+    height:100%;
+    top:0;
+    left:0;
+    right:0;
+    margin-left:23%;
+}
+
 .list ul {
     list-style:"* ";
 }
 
-.menu {
-    position:absolute;
-    background-color:#292828;
-    width:100%;
-    height:100px;
-    top:0;
-    left:0;
-    right:0;
-    margin-top:auto;
+
+.textmod {
+    text-align:center;
+    font-family:'Comic Sans MS';
+}
+
+.menuTextMod {
+    color:#999999;
+    margin-left:13%;
+    font-style:italic;
+    font-family:'Comic Sans MS';
 }

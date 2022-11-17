@@ -19,7 +19,10 @@
         <meta charset="UTF-8">
     </head>
     <body>
-        <div class="menu"></div>
+        <div class="menu ">
+            <h1 class="menuTextMod">Menu</h1>
+            <div class="line"></div>
+        </div>
         <div>
             <div class="left-sblock1"></div>
             <div class="opacity left-sblock1"></div>
