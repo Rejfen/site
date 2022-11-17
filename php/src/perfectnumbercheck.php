@@ -24,7 +24,7 @@
                     <div class="formmod">
                         <br />
                         <form  method="POST" class="textmod">
-                            <label for="number">Podaj liczbę "perfekcyjną"</label>
+                            <label for="number">Podaj liczbę perfekcyjną</label>
                             <input type="number" name="number" id="number">
                             <br /><br />
                             <input type="submit" name="submit" value="Wyślij">

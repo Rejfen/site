@@ -27,12 +27,12 @@
             
             for ($i=0; $i < $number; $i++) {
                 $timestamp = mt_rand(1, time());
-                $array[$i]= "<li>" . date("d.m", $timestamp) . "</li>";
+                $array[$i]= date("d.m", $timestamp);
 
                 if (($this->isLeapYear) !== true) {
-                    while( $array[$i] == '<li>29.02</li>' ) {
+                    while( $array[$i] == '29.02' ) {
                         $timestamp = mt_rand(1, time());
-                        $array[$i] = "<li>" . date("d.m", $timestamp) . "</li>";
+                        $array[$i] = date("d.m", $timestamp);
                     }
                 }
             }

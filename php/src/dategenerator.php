@@ -51,7 +51,7 @@
                                         echo "<ul class=textmod>";
 
                                         foreach ($results as $result) {
-                                            echo $result;
+                                            echo "<li>" . $result . "</li>";
                                         }
 
                                         echo "</ul>";
