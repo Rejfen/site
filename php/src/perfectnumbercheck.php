@@ -39,14 +39,16 @@
                         <br />
                         <br />
                         <?php
-                        if (!empty($error)) {
+                        if (isset($number) == true) {
+                            if (!empty($error)) {
                             echo "<div class=textmod>";
-                            foreach($error as $value) {
-                                echo $value;
+                                foreach($error as $value) {
+                                    echo $value;
+                                }
+                                echo "</div>"; 
+                            } else {
+                                echo "<div class=textmod>".$results."</div>";
                             }
-                            echo "</div>"; 
-                        } else {
-                            echo "<div class=textmod>".$results."</div>";
                         }
                         ?>
                     </div>
