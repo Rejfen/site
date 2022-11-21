@@ -128,3 +128,12 @@ body {
     right: 0;
     margin-top: auto;
 }
+
+.spacingXSix {
+    height:102px;
+    position:absolute;
+}
+
+a, a:link, a:visited {
+    color: #999999;
+}
