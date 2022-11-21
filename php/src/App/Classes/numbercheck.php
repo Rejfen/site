@@ -25,6 +25,9 @@
             if ($this->number<=0) {
                 $error[] = 'Zła liczba';             
             }
+            if ($this->number>536870910) {
+                $error[] = 'Za duża liczba';
+            }
         
             return $error;
         }

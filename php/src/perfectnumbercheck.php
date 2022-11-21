@@ -6,8 +6,10 @@
 
         $pnumber= new PerfNumberCheck($number);
         $error = $pnumber->getErrors();
-        $pnumber->process();
-        $results = $pnumber->getResult();
+        if (empty($error)) {
+            $pnumber->process();
+            $results = $pnumber->getResult();
+        }
     }
 ?>
 
@@ -41,7 +43,7 @@
                         <?php
                         if (isset($number) == true) {
                             if (!empty($error)) {
-                            echo "<div class=textmod>";
+                                echo "<div class=textmod>";
                                 foreach($error as $value) {
                                     echo $value;
                                 }
