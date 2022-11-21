@@ -1,7 +1,14 @@
 <?php
-    include(__DIR__ . '/App/Classes/');
+    include(__DIR__ . '/App/Classes/numbercheck.php');
 
-    
+    if (!empty($_POST) && array_key_exists('number', $_POST)) {
+        $number = (int) $_POST["number"];
+
+        $pnumber= new PerfNumberCheck($number);
+        $error = $pnumber->getErrors();
+        $pnumber->process();
+        $results = $pnumber->getResult();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +38,17 @@
                         </form>
                         <br />
                         <br />
-                        
+                        <?php
+                        if (!empty($error)) {
+                            echo "<div class=textmod>";
+                            foreach($error as $value) {
+                                echo $value;
+                            }
+                            echo "</div>"; 
+                        } else {
+                            echo "<div class=textmod>".$results."</div>";
+                        }
+                        ?>
                     </div>
                     <br /><br /><hr />
                 </div>
