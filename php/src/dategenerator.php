@@ -20,11 +20,11 @@
     </head>
     <body>
         <?php
-        include('visual/menu.html');
+        include_once('visual/menu.html');
         ?>
         <div>
             <?php 
-            include('visual/sidebarleft.html');
+            include_once('visual/sidebarleft.html');
             ?>
                 <div class="workspc">
                     <br /><br /><br /><br /><br /><hr /><br />
@@ -63,7 +63,7 @@
                     <br /><br /><hr />
                 </div>
             <?php 
-            include('visual/sidebarRight.html');
+            include_once('visual/sidebarRight.html');
             ?>
         </div>
     </body>
