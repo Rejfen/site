@@ -1,4 +1,6 @@
 <?php
+    include ('DataProcessor.php'); //interface
+
     class PerfNumberCheck implements DataProcessor
     {
         public $number;

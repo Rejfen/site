@@ -1,13 +1,15 @@
 <?php
-    include(__DIR__ . '/App/Classes/Datagenerator.php');
+    include(__DIR__ . '/App/Classes/DataGenerator.php');
 
     if (!empty($_POST) && array_key_exists('number', $_POST)) {
         $number = (int) $_POST["number"];
         $isLeapYear = (bool) (isset($_POST["leapyear"]) ? true : false);
 
-        $list = new DataGenerator($isLeapYear);
-        $error = $list->validateData($number);
-        $results = $list->checkLeapYearAndGetAllDates($number);
+        if (empty($error)) {
+            $list = new DataGenerator($isLeapYear, $number);
+            $error = $list->getErrors();
+            $list->process();
+        }
     }
 ?>
 
@@ -44,15 +46,19 @@
                         <div class="list">
                             <?php
                                 if (isset($number) == true) {
-                                    if ($error !== '') {
-                                        echo "<div class=textmod>".$error."</div>"; 
+                                    if (!empty($error)) {
+                                        echo "<div class=textmod>";
+                                        
+                                        foreach($error as $value) {
+                                            echo $value;
+                                        }
+
+                                         echo"</div>"; 
                                     } 
                                     else {
                                         echo "<ul class=textmod>";
 
-                                        foreach ($results as $result) {
-                                            echo "<li>" . $result . "</li>";
-                                        }
+                                        $list->getResult();
 
                                         echo "</ul>";
                                     }
