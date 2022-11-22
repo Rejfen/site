@@ -13,7 +13,7 @@
         {
             $error = ''; 
     
-            if ($number<=0) {
+            if ($number <= 0) {
                 $error = 'Zła liczba';             
             }
     
@@ -26,23 +26,22 @@
 
             switch ($this->isLeapYear) {
                 case true:
-                    for ($i=0; $i < $number; $i++) {
+                    for ($i = 0; $i < $number; $i++) {
                         $start = strtotime("1 January 2020");
                         $end = strtotime("31 December 2020");
                         $timestamp = mt_rand($start, $end);
-                        $array[$i]= date("d.m", $timestamp);
+                        $array[$i] = date("d.m", $timestamp);
                     }
                     break;
                 case false:
-                    for ($i=0; $i < $number; $i++) {
+                    for ($i = 0; $i < $number; $i++) {
                         $start = strtotime("1 January 2021");
                         $end = strtotime("31 December 2021");
                         $timestamp = mt_rand($start, $end);
-                        $array[$i]= date("d.m", $timestamp);
+                        $array[$i] = date("d.m", $timestamp);
                     }
                     break;
             }
-
             return $array;
         }
     }
