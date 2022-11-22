@@ -1,5 +1,4 @@
 <?php
-    
     class DataGenerator
     {   
         public $number;
@@ -24,18 +23,26 @@
         public function checkLeapYearAndGetAllDates(int $number)
         {
             $array = [];
-            
-            for ($i=0; $i < $number; $i++) {
-                $timestamp = mt_rand(1, time());
-                $array[$i]= date("d.m", $timestamp);
 
-                if (($this->isLeapYear) !== true) {
-                    while( $array[$i] == '29.02' ) {
-                        $timestamp = mt_rand(1, time());
-                        $array[$i] = date("d.m", $timestamp);
+            switch ($this->isLeapYear) {
+                case true:
+                    for ($i=0; $i < $number; $i++) {
+                        $start = strtotime("1 January 2020");
+                        $end = strtotime("31 December 2020");
+                        $timestamp = mt_rand($start, $end);
+                        $array[$i]= date("d.m", $timestamp);
                     }
-                }
+                    break;
+                case false:
+                    for ($i=0; $i < $number; $i++) {
+                        $start = strtotime("1 January 2021");
+                        $end = strtotime("31 December 2021");
+                        $timestamp = mt_rand($start, $end);
+                        $array[$i]= date("d.m", $timestamp);
+                    }
+                    break;
             }
+
             return $array;
         }
     }
