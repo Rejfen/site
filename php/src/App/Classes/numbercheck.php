@@ -1,13 +1,4 @@
 <?php
-    interface DataProcessor
-    {
-        public function process() : void;
-
-        public function getResult();
-
-        public function getErrors(): array;
-    }
-
     class PerfNumberCheck implements DataProcessor
     {
         public $number;
@@ -22,10 +13,10 @@
         {
             $error = [];
             
-            if ($this->number<=0) {
-                $error[] = 'Zła liczba';             
+            if ($this->number <= 0) {
+                $error[] = 'Zła liczba';
             }
-            if ($this->number>536870910) {
+            if ($this->number > 536870910) {
                 $error[] = 'Za duża liczba';
             }
         
@@ -35,8 +26,8 @@
         public function process(): void 
         {
             $array = [];
-            for($i=1;$i<$this->number;$i++) {
-                if($this->number % $i==0) {
+            for ($i = 1;$i < $this->number;$i++) {
+                if ($this->number % $i==0) {
                     $array[] = $i;
                 }
             }
@@ -47,7 +38,7 @@
         public function getResult()
         {
             
-            if(array_sum($this->array) == $this->number) {
+            if (array_sum($this->array) == $this->number) {
                 return "jest";
             } else {
                 return "nie jest";

@@ -1,5 +1,5 @@
 <?php
-    include(__DIR__ . '/App/Classes/numbercheck.php');
+    include(__DIR__ . '/App/Classes/NumberCheck.php');
 
     if (!empty($_POST) && array_key_exists('number', $_POST)) {
         $number = (int) $_POST["number"];
