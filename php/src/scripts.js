@@ -12,8 +12,9 @@ function pNumberCheckRequest()
         }
     };
 
-    xhttp.open("POST", "/App/Classes/NumberCheck.php", true);
+    xhttp.open("POST", "pNumberRequestHandler.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhttp.send("number=" + numberjson);
 }
+

@@ -1,11 +1,6 @@
 <?php
     include ('DataProcessor.php'); //interface
 
-    $return = [];
-    $json = $_POST['number'];
-    $reciveddata = json_decode($json, true);
-    $number = $reciveddata['number'];
-    
     class PerfNumberCheck implements DataProcessor
     {
         public $number;
@@ -52,16 +47,3 @@
             }
         }
     }
-
-    $pnumber= new PerfNumberCheck($number);
-    $error = $pnumber->getErrors();
-    if (empty($error)) {
-        $pnumber->process();
-        $return['result'] = $pnumber->getResult();
-    } else {
-        $return['result'] = $error;
-    }
-
-    $json = json_encode($return);
-    echo $json;
-    exit();
