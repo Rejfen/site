@@ -1,24 +1,9 @@
-<?php
-    include(__DIR__ . '/App/Classes/NumberCheck.php');
-
-    if (!empty($_POST) && array_key_exists('number', $_POST)) {
-        $number = (int) $_POST["number"];
-
-        $pnumber= new PerfNumberCheck($number);
-        $error = $pnumber->getErrors();
-        if (empty($error)) {
-            $pnumber->process();
-            $results = $pnumber->getResult();
-        }
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="pl">
     <head>
         <title>Sprawdzacz liczb doskonałych</title>
         <link rel="stylesheet" href="style.css">
-        <meta charset="UTF-8">
+        <meta charset="UTF-8"><script src="scripts.js" language = "javascript" type = "text/javascript"></script>
     </head>
     <body>
         <?php
@@ -32,27 +17,16 @@
                     <br /><br /><br /><br /><br /><hr /><br />
                     <div class="formmod">
                         <br />
-                        <form  method="POST" class="textmod">
+                        <form class="textmod">
                             <label for="number">Podaj liczbę perfekcyjną</label>
                             <input type="number" name="number" id="number">
                             <br /><br />
-                            <input type="submit" name="submit" value="Wyślij">
+                            <input type="button" name="button" value="Wyślij" onclick="pNumberCheckRequest()">
                         </form>
                         <br />
                         <br />
-                        <?php
-                        if (isset($number) == true) {
-                            if (!empty($error)) {
-                                echo "<div class=textmod>";
-                                foreach($error as $value) {
-                                    echo $value;
-                                }
-                                echo "</div>"; 
-                            } else {
-                                echo "<div class=textmod>".$results."</div>";
-                            }
-                        }
-                        ?>
+                      
+                        <div id="result" class=textmod></div>
                     </div>
                     <br /><br /><hr />
                 </div>
@@ -60,5 +34,6 @@
             include('visual/sidebarRight.html');
             ?>
         </div>
+        
     </body>
 </html>
