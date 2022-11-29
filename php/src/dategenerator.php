@@ -1,24 +1,10 @@
-<?php
-    include(__DIR__ . '/App/Classes/DataGenerator.php');
-
-    if (!empty($_POST) && array_key_exists('number', $_POST)) {
-        $number = (int) $_POST["number"];
-        $isLeapYear = (bool) (isset($_POST["leapyear"]) ? true : false);
-
-        if (empty($error)) {
-            $list = new DataGenerator($isLeapYear, $number);
-            $error = $list->getErrors();
-            $list->process();
-        }
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="pl">
     <head>
         <title>Generator dat</title>
         <link rel="stylesheet" href="style.css">
         <meta charset="UTF-8">
+        <script src="scripts.js" language = "javascript" type = "text/javascript"></script>
     </head>
     <body>
         <?php
@@ -39,31 +25,14 @@
                             <label for="leapyear">Uwzględnij dni przestępne</label>
                             <input type="checkbox" name="leapyear" id="leapyear">
                             <br /><br />
-                            <input type="submit" name="submit" value="Wyślij">
+                            <input type="button" name="button" value="Wyślij" onclick="dateGenRequest()">
                         </form>
                         <br />
                         <br />
                         <div class="list">
-                            <?php
-                                if (isset($number) == true) {
-                                    if (!empty($error)) {
-                                        echo "<div class=textmod>";
-                                        
-                                        foreach($error as $value) {
-                                            echo $value;
-                                        }
+                            <ul class="textmod" id="result">
 
-                                         echo"</div>"; 
-                                    } 
-                                    else {
-                                        echo "<ul class=textmod>";
-
-                                        $list->getResult();
-
-                                        echo "</ul>";
-                                    }
-                                }
-                            ?>
+                            </ul>
                         </div>
                     </div>
                     <br /><br /><hr />

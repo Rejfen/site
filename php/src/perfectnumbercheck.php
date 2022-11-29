@@ -3,7 +3,8 @@
     <head>
         <title>Sprawdzacz liczb doskonałych</title>
         <link rel="stylesheet" href="style.css">
-        <meta charset="UTF-8"><script src="scripts.js" language = "javascript" type = "text/javascript"></script>
+        <meta charset="UTF-8">
+        <script src="scripts.js" language = "javascript" type = "text/javascript"></script>
     </head>
     <body>
         <?php

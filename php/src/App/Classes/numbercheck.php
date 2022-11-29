@@ -15,10 +15,11 @@
         {
             $error = [];
             
-            if ($this->number <= 0) {
+            if ($this->number == NULL) {
+                $error[] = 'Wprowadź liczbę';
+            } elseif ($this->number <= 0) {
                 $error[] = 'Zła liczba';
-            }
-            if ($this->number > 536870910) {
+            } elseif ($this->number > 536870910) {
                 $error[] = 'Za duża liczba';
             }
         

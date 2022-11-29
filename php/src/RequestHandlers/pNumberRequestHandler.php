@@ -1,5 +1,5 @@
 <?php
-    include(__DIR__ . "/App/Classes/NumberCheck.php");
+    include(__DIR__ . "/../App/Classes/NumberCheck.php");
 
     $return = [];
     $json = $_POST['number'];

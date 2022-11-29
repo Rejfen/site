@@ -16,8 +16,10 @@
         public function getErrors(): array
         {
             $error = []; 
-    
-            if ($this->number <= 0) {
+
+            if ($this->number == NULL) {
+                $error[] = 'Wprowadź liczbę';
+            } elseif ($this->number <= 0) {
                 $error[] = 'Zła liczba';             
             }
     
@@ -48,8 +50,7 @@
 
         public function getResult()
         {
-            foreach ($this->array as $value) {
-                echo "<li>" . $value . "</li>";
-            }
+            
+            return $this->array;
         }
     }
